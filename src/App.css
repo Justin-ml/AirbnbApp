@@ -1,5 +1,13 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  /* background-color: #e5e5e5;*/
+}
+
+.app-container {
+  width: 550px;
+  height: 853px;
+  background-color: #ffff;
+  border-radius: 10px;
 }
