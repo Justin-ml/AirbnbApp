@@ -8,6 +8,14 @@
 .app-container {
   width: 550px;
   height: 853px;
-  background-color: #ffff;
+  background-color: #ffffff;
   border-radius: 10px;
+  margin: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  width: 100%;
 }

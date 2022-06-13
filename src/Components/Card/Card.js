@@ -1,21 +1,32 @@
 import React from "react";
 import "./card.css";
-import katieZaferes from "../../images/katie-zaferes.jpg";
-import starIcon from "../../images/star-icon.png";
 
-export default function Card() {
+export default function Card({ item }) {
+  let badgeText;
+  if (item.openSpots === 0) {
+    badgeText = "SOLD OUT";
+  } else if (item.location === "online") {
+    badgeText = "ONLINE";
+  }
   return (
-    <section className="card-section">
-      <img src={katieZaferes} alt="katie zaferes" className="katie-pic" />
-
+    <div className="card">
+      <section>
+        {badgeText && <div className="card-availability">{badgeText}</div>}
+        <img src={item.coverImg} alt="katie zaferes" className="profile-pic" />
+      </section>
       <div>
-        <img src={starIcon} alt="starIcon" className="star-icon" />
-        5.0(6).USA
+        <img src="/images/star-icon.png" alt="starIcon" className="star-icon" />
+        <span className="rating common-styles">{item.stats.rating}</span>
+        <span className="rating-location common-styles">
+          ({item.stats.reviewCount}).{" "}
+        </span>
+        <span className="rating-location common-styles">{item.location}</span>
+
+        <p className="title common-styles">{item.title}</p>
+        <p className="common-styles">
+          <strong>From ${item.price}</strong> / Person
+        </p>
       </div>
-      <p>Life lessons with katie Zaferes</p>
-      <p>
-        <strong>From $136</strong> / Person
-      </p>
-    </section>
+    </div>
   );
 }
